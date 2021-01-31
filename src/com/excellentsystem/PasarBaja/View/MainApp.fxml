@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" styleClass="stage" stylesheets="@../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.PasarBaja.View.MainAppController">
+    <left>
+        <VBox fx:id="vbox" minHeight="0.0" minWidth="0.0" prefWidth="200.0" style="-fx-background-color: seccolor2;" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" minHeight="50.0" minWidth="0.0" prefHeight="50.0" style="-fx-background-color: seccolor1; -fx-text-fill: seccolor6; -fx-font-size: 20; -fx-font-family: Georgia;" text="PASAR BAJA">
+                    <VBox.margin>
+                        <Insets left="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Accordion fx:id="accordion" minWidth="0.0">
+                    <panes>
+                        <TitledPane fx:id="masterPane" graphicTextGap="10.0" minWidth="0.0" text="Master" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="masterVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuDataCustomer" mnemonicParsing="false" onMouseClicked="#menuDataCustomer" prefHeight="35.0" prefWidth="270.0" text="Data Customer">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuDataSupplier" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#menuDataSupplier" prefHeight="35.0" prefWidth="270.0" text="Data Supplier">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuDataBarang" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#menuDataBarang" prefHeight="35.0" prefWidth="270.0" text="Data Barang">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/master.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="penjualanPane" graphicTextGap="10.0" layoutX="10.0" layoutY="42.0" minWidth="0.0" text="Penjualan" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="penjualanVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuPemesanan" mnemonicParsing="false" onMouseClicked="#menuPemesanan" prefHeight="35.0" prefWidth="270.0" text="Pemesanan">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuPenjualan" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#menuPenjualan" prefHeight="35.0" prefWidth="270.0" text="Penjualan">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/MenuPenjualan.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="pembelianPane" graphicTextGap="10.0" layoutX="10.0" layoutY="74.0" minWidth="0.0" onMouseClicked="#menuPembelian" text="Pembelian" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/pembelian.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="barangPane" graphicTextGap="10.0" layoutX="10.0" layoutY="107.0" minWidth="0.0" text="Barang" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="barangVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuPermintaanBarang" layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onMouseClicked="#menuPermintaanBarang" prefHeight="35.0" prefWidth="270.0" text="Permintaan Barang">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuPengirimanBarang" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#menuPengirimanBarang" prefHeight="35.0" prefWidth="270.0" text="Pengiriman Barang">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/MenuProduk.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="keuanganPane" graphicTextGap="10.0" layoutX="10.0" layoutY="139.0" minWidth="0.0" text="Keuangan" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="keuanganVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuKeuangan" mnemonicParsing="false" onMouseClicked="#menuKeuangan" prefHeight="35.0" prefWidth="270.0" text="Data Keuangan">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuHutang" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#menuHutang" prefHeight="35.0" prefWidth="270.0" text="Data Hutang" textFill="WHITE">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuPiutang" layoutX="21.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#menuPiutang" prefHeight="35.0" prefWidth="270.0" text="Data Piutang">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuModal" layoutX="21.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#menuModal" prefHeight="35.0" prefWidth="270.0" text="Data Modal">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuAsetTetap" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" onMouseClicked="#menuAsetTetap" prefHeight="35.0" prefWidth="270.0" text="Data Aset Tetap">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/keuangan.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="laporanPane" graphicTextGap="10.0" layoutX="10.0" layoutY="170.0" minWidth="0.0" text="Laporan" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="laporanVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuLaporanBarang" mnemonicParsing="false" popupSide="RIGHT" prefHeight="35.0" prefWidth="270.0" text="Laporan Barang">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanBarang" text="Laporan Barang" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanPenyesuaianStokBarang" text="Laporan Penyesuaian Stok Barang" />
+                                            </items>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuLaporanPenjualan" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="35.0" prefWidth="270.0" text="Laporan Penjualan">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanPenjualan" text="Laporan Penjualan" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanBarangTerjual" text="Laporan Barang Terjual" />
+                                            </items>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuLaporanPembelian" layoutX="21.0" layoutY="51.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="35.0" prefWidth="270.0" text="Laporan Pembelian">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanPembelian" text="Laporan Pembelian" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanBarangDibeli" text="Laporan Barang Dibeli" />
+                                            </items>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuLaporanKeuangan" layoutX="21.0" layoutY="81.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="35.0" prefWidth="270.0" text="Laporan Keuangan">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanKeuangan" text="Laporan Keuangan" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanHutang" text="Laporan Hutang" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanPiutang" text="Laporan Piutang" />
+                                            </items>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuLaporanManagerial" layoutX="21.0" layoutY="111.0" mnemonicParsing="false" popupSide="RIGHT" prefHeight="35.0" prefWidth="270.0" text="Laporan Managerial">
+                                            <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanUntungRugi" text="Laporan Untung Rugi " />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanUntungRugiPeriode" text="Laporan Untung Rugi Periode" />
+                                                <MenuItem mnemonicParsing="false" onAction="#menuLaporanNeraca" text="Laporan Neraca" />
+                                            </items>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/MenuLaporan.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </TitledPane>
+                        <TitledPane fx:id="pengaturanPane" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" minWidth="0.0" text="Pengaturan" textFill="WHITE">
+                            <content>
+                                <VBox fx:id="pengaturanVbox" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="menuDataUser" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onMouseClicked="#menuDataUser" prefHeight="35.0" prefWidth="270.0" text="Data User">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuKategoriHutang" mnemonicParsing="false" onMouseClicked="#showKategoriHutang" prefHeight="35.0" prefWidth="270.0" text="Kategori Hutang">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuKategoriPiutang" layoutX="21.0" layoutY="21.0" mnemonicParsing="false" onMouseClicked="#showKategoriPiutang" prefHeight="35.0" prefWidth="270.0" text="Kategori Piutang">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuKategoriKeuangan" layoutX="21.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#showKategoriKeuangan" prefHeight="35.0" prefWidth="270.0" text="Kategori Keuangan">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="menuKategoriTransaksi" layoutX="21.0" layoutY="81.0" mnemonicParsing="false" onMouseClicked="#showKategoriTransaksi" prefHeight="35.0" prefWidth="270.0" text="Kategori Transaksi">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/MenuSetting.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets bottom="-1.0" />
+                            </padding>
+                        </TitledPane>
+                    </panes>
+                </Accordion>
+                <VBox alignment="BOTTOM_CENTER" maxHeight="1.7976931348623157E308" minWidth="0.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <TitledPane fx:id="loginButton" expanded="false" graphicTextGap="5.0" style="-fx-background-color: seccolor1;" text="Login" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/user.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <content>
+                                <VBox fx:id="userVbox" maxWidth="1.7976931348623157E308" prefHeight="30.0" style="-fx-padding: 0 -1 0 0;">
+                                    <children>
+                                        <MenuButton fx:id="ubahPasswordButton" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#menushowUbahPassword" prefHeight="40.0" text="Change Password">
+                                            <VBox.margin>
+                                                <Insets />
+                                            </VBox.margin>
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton fx:id="logoutButton" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#menuLogout" prefHeight="40.0" text="Logout">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                        <MenuButton layoutX="10.0" layoutY="40.0" maxWidth="1.7976931348623157E308" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#menuExit" prefHeight="40.0" text="Exit">
+                                            <padding>
+                                                <Insets left="50.0" />
+                                            </padding>
+                                        </MenuButton>
+                                    </children>
+                                </VBox>
+                            </content>
+                            <padding>
+                                <Insets bottom="-2.0" />
+                            </padding>
+                        </TitledPane>
+                    </children>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets left="-20.0" />
+            </padding>
+        </VBox>
+    </left>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <AnchorPane minHeight="50.0" prefHeight="50.0" style="-fx-background-color: seccolor2;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="title" layoutX="66.0" layoutY="11.0" style="-fx-font-size: 20; -fx-text-fill: white; -fx-font-family: Georgia;" text="PASAR BAJA" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="0.0">
+                            <padding>
+                                <Insets left="10.0" />
+                            </padding>
+                        </Label>
+                        <Button layoutY="8.0" mnemonicParsing="false" onAction="#showHideMenu" prefHeight="50.0" prefWidth="50.0" styleClass="headbutton" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <graphic>
+                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Resource/Menu.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </top>
+            <center>
+                <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: seccolor6;" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="500.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../Resource/pasar%20baja.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="1024.0" styleClass="stage" stylesheets="@../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.PasarBaja.View.KeuanganController">
+    <children>
+        <GridPane layoutX="28.0" layoutY="43.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints fillHeight="false" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints fillHeight="false" maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TreeTableView fx:id="keuanganTable" showRoot="false" tableMenuButtonVisible="true" GridPane.rowIndex="2">
+                    <columns>
+                        <TreeTableColumn fx:id="noKeuanganColumn" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="No Keuangan" />
+                        <TreeTableColumn fx:id="tglKeuanganColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Tgl Keuangan" visible="false" />
+                        <TreeTableColumn fx:id="tipeKeuanganColumn" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" text="Tipe Keuangan" visible="false" />
+                        <TreeTableColumn fx:id="kategoriColumn" maxWidth="1000.0" prefWidth="75.0" text="Kategori" />
+                        <TreeTableColumn fx:id="deskripsiColumn" maxWidth="2000.0" prefWidth="75.0" text="Deskripsi" />
+                        <TreeTableColumn fx:id="jumlahRpColumn" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" text="Jumlah Rp" />
+                        <TreeTableColumn fx:id="kodeUserColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Kode User" visible="false" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TreeTableView>
+                <AnchorPane>
+                    <children>
+                        <HBox alignment="CENTER_LEFT" layoutX="-145.0" layoutY="-6.0" prefHeight="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <ComboBox fx:id="TipeKeuanganCombo" onAction="#getKeuangan" prefHeight="40.0" prefWidth="140.0" />
+                                <Label prefHeight="30.0" text="Tanggal">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <DatePicker fx:id="tglMulaiPicker" editable="false" onAction="#getKeuangan" prefHeight="40.0" prefWidth="150.0" />
+                                <Label alignment="CENTER" prefHeight="30.0" prefWidth="10.0" text="-" />
+                                <DatePicker fx:id="tglAkhirPicker" editable="false" onAction="#getKeuangan" prefHeight="40.0" prefWidth="150.0" />
+                            </children>
+                        </HBox>
+                        <TextField fx:id="searchField" prefHeight="30.0" prefWidth="300.0" promptText="Search..." styleClass="search-field" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                    </children>
+                </AnchorPane>
+                <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: seccolor6;" GridPane.rowIndex="3">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" text="Saldo Akhir" />
+                        <Label fx:id="saldoAkhirField" alignment="CENTER_RIGHT" style="-fx-font-weight: bold;" text="0" />
+                    </children>
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </GridPane>
+    </children>
+</AnchorPane>

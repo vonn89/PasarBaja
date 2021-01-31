@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="628.0" prefWidth="1024.0" styleClass="stage" stylesheets="@../Resource/MyTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.excellentsystem.PasarBaja.View.PembelianController">
+    <children>
+        <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints fillHeight="false" maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints fillHeight="false" maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <TableView fx:id="pembelianTable" prefHeight="2000.0" prefWidth="2000.0" tableMenuButtonVisible="true" GridPane.rowIndex="2">
+                    <columns>
+                        <TableColumn fx:id="noPembelianColumn" prefWidth="75.0" text="No Pembelian" />
+                        <TableColumn fx:id="tglPembelianColumn" prefWidth="75.0" text="Tgl Pembelian" />
+                        <TableColumn fx:id="namaSupplierColumn" prefWidth="75.0" text="Supplier" />
+                        <TableColumn fx:id="paymentTermColumn" prefWidth="75.0" text="Payment Term" />
+                        <TableColumn fx:id="totalPembelianColumn" prefWidth="75.0" text="Total Pembelian" />
+                        <TableColumn fx:id="totalBebanPembelianColumn" prefWidth="75.0" text="Total Beban Pembelian" />
+                        <TableColumn fx:id="grandTotalColumn" prefWidth="75.0" text="GrandTotal" />
+                        <TableColumn fx:id="pembayaranColumn" prefWidth="75.0" text="Pembayaran" />
+                        <TableColumn fx:id="sisaPembayaranColumn" prefWidth="75.0" text="Sisa Pembayaran" />
+                        <TableColumn fx:id="catatanColumn" prefWidth="75.0" text="Catatan" visible="false" />
+                        <TableColumn fx:id="kodeUserColumn" prefWidth="75.0" text="Kode User" visible="false" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: seccolor6;" GridPane.rowIndex="3">
+                    <children>
+                        <Label alignment="CENTER_RIGHT" text="Total Pembelian" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="totalPembelianField" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="10.0" style="-fx-font-weight: bold;" text="0" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER_RIGHT" layoutX="76.0" layoutY="10.0" text="Total Pembayaran" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="sudahTerbayarField" alignment="CENTER_RIGHT" layoutX="109.0" layoutY="10.0" style="-fx-font-weight: bold;" text="0" HBox.hgrow="ALWAYS" />
+                        <Label alignment="CENTER_RIGHT" layoutX="142.0" layoutY="10.0" text="Sisa Pembayaran" HBox.hgrow="ALWAYS" />
+                        <Label fx:id="belumTerbayarField" alignment="CENTER_RIGHT" layoutX="175.0" layoutY="10.0" style="-fx-font-weight: bold;" text="0" HBox.hgrow="ALWAYS" />
+                    </children>
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" prefHeight="100.0" spacing="10.0">
+                    <children>
+                        <Label prefHeight="30.0" text="Tanggal" />
+                        <DatePicker fx:id="tglMulaiPicker" onAction="#getPembelian" prefHeight="40.0" prefWidth="150.0" />
+                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="10.0" text="-" />
+                        <DatePicker fx:id="tglAkhirPicker" onAction="#getPembelian" prefHeight="40.0" prefWidth="150.0" />
+                        <Label alignment="CENTER" text="Status" />
+                        <ComboBox fx:id="groupByCombo" onAction="#getPembelian" prefHeight="40.0" prefWidth="140.0" />
+                    </children>
+                </HBox>
+                <TextField fx:id="searchField" maxWidth="300.0" prefHeight="40.0" promptText="Search..." styleClass="search-field" GridPane.halignment="RIGHT" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </GridPane>
+    </children>
+</AnchorPane>
