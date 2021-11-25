@@ -153,6 +153,7 @@ public class Main extends Application {
                     sistem.setListUser(listUser);
                     updateProgress(40, 100);
                     updateMessage("checking for updates...");
+                    System.out.println(version+"-"+sistem.getVersion());
                     if(!version.equals(sistem.getVersion())){
                         updateMessage("updating software...");
                         updateProgress(50, 100);

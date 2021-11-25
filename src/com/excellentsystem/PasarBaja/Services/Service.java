@@ -944,16 +944,11 @@ public class Service {
             p.setTglPenjualan(tglSql.format(date));
             PenjualanHeadDAO.insert(con, p);
             
-            int noUrut = 1;
             for (PenjualanDetail d : p.getListPenjualanDetail()) {
                 d.setNoPenjualan(noPenjualan);
-                d.setNoUrut(noUrut);
                 PenjualanDetailDAO.insert(con, d);
-                
-                noUrut++;
             }
 
-            
             PemesananHead pemesanan = PemesananHeadDAO.get(con, p.getNoPemesanan());
             double dp = pemesanan.getSisaDownPayment();
             if (p.getTotalPenjualan() >= dp) {
@@ -1976,6 +1971,7 @@ public class Service {
             String noKeuangan = KeuanganDAO.getId(con, date);
 
             k.setNoKeuangan(noKeuangan);
+            k.setTglKeuangan(tglSql.format(date));
             KeuanganDAO.insert(con, k);
 
             Keuangan modal = new Keuangan();
@@ -2216,6 +2212,7 @@ public class Service {
         LogBarang logBarang = LogBarangDAO.getLastBeforeDateAndBarang(
                 con, tglBarang.format(tglSql.parse(tglTransaksi)), kodeBarang);
         listBarang.sort(Comparator.comparing(LogBarang::getTanggal));
+        System.out.println(kodeBarang);
         double stok = logBarang.getStokAkhir();
         double nilai = logBarang.getNilaiAkhir();
         for (LogBarang log : listBarang) {

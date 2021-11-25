@@ -155,7 +155,7 @@ public class KategoriTransaksiController {
     private void newKategoriTransaksi() {
         status = "insert";
         kodeKategoriTransaksiField.setText("");
-        jenisKategoriTransaksiCombo.getSelectionModel().select("");
+        jenisKategoriTransaksiCombo.getSelectionModel().clearSelection();
         kodeKategoriTransaksiField.setDisable(false);
     }
 
@@ -166,7 +166,7 @@ public class KategoriTransaksiController {
             jenisKategoriTransaksiCombo.getSelectionModel().select(k.getJenisTransaksi());
             kodeKategoriTransaksiField.setDisable(true);
         } else {
-            status = "";
+            status = "insert";
             kodeKategoriTransaksiField.setText("");
             jenisKategoriTransaksiCombo.getSelectionModel().clearSelection();
             kodeKategoriTransaksiField.setDisable(false);
